@@ -1,0 +1,19 @@
+.main_container{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #222831;
+}
+.header{
+    flex: 2;
+    background-color: blue;
+}
+.tv_show_detail{
+    flex: 4;    background-color: rgb(255, 0, 183);
+
+}
+.recommended_tv_shows{
+    flex: 2;    background-color: rgb(255, 136, 0);
+
+}
