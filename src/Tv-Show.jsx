@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-const API_KEY = '7d149180ae55b4332e8e47530bfdb89f';
 const type = 'tv/popular';
 
 export class TVShowAPI {
