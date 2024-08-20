@@ -1,5 +1,7 @@
 import axios from 'axios';
+import { config } from '../config';
 
+const API_KEY = config.MY_KEY;
 const type = 'tv/popular';
 
 export class TVShowAPI {
