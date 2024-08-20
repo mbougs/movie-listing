@@ -7,13 +7,12 @@
 }
 .header{
     flex: 2;
-    background-color: blue;
 }
 .tv_show_detail{
-    flex: 4;    background-color: rgb(255, 0, 183);
+    flex: 4;
 
 }
 .recommended_tv_shows{
-    flex: 2;    background-color: rgb(255, 136, 0);
+    flex: 2;
 
 }
