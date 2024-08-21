@@ -4,6 +4,8 @@ import s from './style.module.css';
 import { BACKDROP_BASE_URL } from '../config';
 
 
+
+TVShowAPI.fetchPopulars();
 function App() {
   const [ currentTVShow, setCurrentTVShow ] = useState();
   
