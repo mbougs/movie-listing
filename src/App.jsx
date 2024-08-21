@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { TVShowAPI } from './Tv-Show';
+import { TVShowAPI } from './TvShow';
+import TVShowDetail from './TVShowDetail';
 import s from './style.module.css';
 import { BACKDROP_BASE_URL } from '../config';
 
@@ -44,7 +45,9 @@ console.log(currentTVShow);
           </div>
         </div>
       </div>
-      <div className={s.tv_show_detail}>Show Details</div>
+      <div className={s.tv_show_detail}>
+        { currentTVShow && <TVShowDetail tvShow={currentTVShow}/> }
+      </div>
       <div className={s.recommended_tv_shows}>Recommended for You</div>
     </div>
     </>

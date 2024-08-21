@@ -1,18 +1,36 @@
-.main_container{
+/* App css */
+.main_container {
     padding: 25px;
     display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: #222831;
 }
-.header{
+.header {
     flex: 2;
 }
-.tv_show_detail{
+.tv_show_detail {
     flex: 4;
-
 }
-.recommended_tv_shows{
+.recommended_tv_shows {
     flex: 2;
+}
 
+/* TVShowDetail css */
+.title {
+    font-weight: 400;
+    font-size: 35px;
+}
+/* .rating {
+    sds
+} */
+.overview {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 20px;
+    height: 120px;
+    overflow-y: hidden;
+}
+.overview:hover {
+    overflow-y: auto;
 }
