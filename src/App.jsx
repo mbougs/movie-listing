@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { TVShowAPI } from './TvShow';
 import TVShowDetail from './TVShowDetail';
-import s from './style.module.css';
+import { Logo } from './Logo';
+import myLogo from '../public/logo.png';
 import { BACKDROP_BASE_URL } from '../config';
+import s from './style.module.css';
 
 
 
@@ -37,8 +39,7 @@ console.log(currentTVShow);
       <div className={s.header}>
         <div className="row">
           <div className="col-4">
-            <div>LOGO</div>
-            <div>Subtitle</div>
+            <Logo logo={myLogo} title="WatchList" subtitle="Trending Movies & Tv-Shows" />
           </div>
           <div className="col-md-12 col-lg-4">
             <input style={{width: "100%"}} type="text" />
