@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { TVShowAPI } from './TvShow';
 import TVShowDetail from './TVShowDetail';
+import TVShowList from './TVShowList';
 import { Logo } from './Logo';
 import myLogo from '../public/logo.png';
 import { BACKDROP_BASE_URL } from '../config';
@@ -8,23 +9,39 @@ import s from './style.module.css';
 
 
 
-TVShowAPI.fetchPopulars();
+// TVShowAPI.fetchPopulars(tvShow);
 function App() {
   const [ currentTVShow, setCurrentTVShow ] = useState();
+  const [ recommendationList, setRecommendationList ] = useState([]);
   
+  useEffect(() => {
+    fetchPopulars();
+  }, []);
+  
+  useEffect(() => {
+    console.log('current tv show has changed');
+    if (currentTVShow) {
+      fetchRecommendations(currentTVShow.id);
+    }
+  }, [currentTVShow]);
+
   const fetchPopulars = async () => {
     const popularTVShowList = await TVShowAPI.fetchPopulars();
-      if (popularTVShowList.length > 0) {
-        setCurrentTVShow(popularTVShowList[0]);
-      }
-}
-
-useEffect(() => {
-  fetchPopulars();
-}, []);
-
-console.log(currentTVShow);
-
+    if (popularTVShowList.length > 0) {
+      setCurrentTVShow(popularTVShowList[0]);
+    }
+  };
+  const fetchRecommendations = async (tvShowId) => {
+    const recommendationListResp = await TVShowAPI.fetchRecommendations(tvShowId);
+    if (recommendationListResp.length > 0) {
+      setRecommendationList(recommendationListResp.slice(0, 15));
+    }
+  }
+  
+   
+  const updateCurrentTVShow = (tvShow) => {
+    setCurrentTVShow(tvShow);
+  }
   return (
     <>
     <div className={s.main_container}
@@ -49,7 +66,11 @@ console.log(currentTVShow);
       <div className={s.tv_show_detail}>
         { currentTVShow && <TVShowDetail tvShow={currentTVShow}/> }
       </div>
-      <div className={s.recommended_tv_shows}>Recommended for You</div>
+      <div className={s.recommended_tv_shows}>
+        { currentTVShow && (
+        <TVShowList onClickItem={ updateCurrentTVShow } 
+        tvShowList = { recommendationList } /> )}
+      </div>
     </div>
     </>
   )
