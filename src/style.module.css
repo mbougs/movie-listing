@@ -98,3 +98,27 @@
 .listItem_img {
     border-radius: 10px;
 }
+
+/* SearchBar css */
+.search_icon{
+    position: absolute;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+.search_input{
+    border-radius: 30px;
+    color: white;
+    background-color: #d9d9d96e;
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 100;
+    border-color: transparent;
+    padding: 18px 18px 18px 35px;
+}
+.search_input::placeholder{
+    color: rgba(194, 194, 194);
+}
+.search_input:focus{
+    outline-width: 0;
+}

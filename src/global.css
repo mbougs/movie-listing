@@ -4,9 +4,9 @@ body {
 }
 
 ::-webkit-scrollbar {
-    background: transparent;
+    /* background: transparent; */
 }
 ::webkit-scrollbar-thumb:horizontal {
-    background: rgba(0, 0, 0, 0.61);
-    border-radius: 10px;
+    background: rgba(155, 16, 16, 0.61);
+    border-radius: 70px;
 }
