@@ -34,7 +34,7 @@ function App() {
   const fetchRecommendations = async (tvShowId) => {
     const recommendationListResp = await TVShowAPI.fetchRecommendations(tvShowId);
     if (recommendationListResp.length > 0) {
-      setRecommendationList(recommendationListResp.slice(0, 15));
+      setRecommendationList(recommendationListResp.slice(0, 20));
     }
   }
   
