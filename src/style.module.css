@@ -1,18 +1,124 @@
-.main_container{
+/* App css */
+.main_container {
     padding: 25px;
     display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: #222831;
 }
-.header{
+.header {
     flex: 2;
 }
-.tv_show_detail{
+.tv_show_detail {
     flex: 4;
-
 }
-.recommended_tv_shows{
+.recommended_tv_shows {
     flex: 2;
+}
 
+/* TVShowDetail css */
+.title {
+    font-weight: 400;
+    font-size: 35px;
+}
+.rating_container {
+    display: flex;
+}
+.rating {
+    margin-left: 8px;
+}
+.overview {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 20px;
+    height: 120px;
+    overflow-y: hidden;
+}
+.overview:hover {
+    overflow-y: auto;
+}
+
+/* Logo css */
+.logo_container {
+    display: flex;
+}
+.logo {
+    height: 40px;
+    width: 40px;
+}
+.logo_title {
+    font-size: 25px;
+    font-weight: 350;
+    padding-top: 5px;
+    padding-left: 8px;
+}
+.logo_subtitle {
+   margin-left: 5px; 
+   white-space: nowrap;
+}
+
+/* TvShowList css */
+.showList_title {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 20px;
+}
+  
+.showList_list:hover {
+    overflow: overlay;
+}
+.showList_list {
+    display: flex;
+    width: 100vw - 25px;
+    overflow-x: hidden;
+    padding-bottom:30px;
+}  
+.tv_show_item {
+    margin-right: 20px;
+}
+
+/* TvShowListItem css */
+.listItem_container {
+    position: relative;
+    cursor: pointer;
+}
+  
+.listItem_title {
+    position: absolute;
+    margin-top: -40px;
+    height: 40px;
+    width: 300px;
+    padding-left: 20px;
+    padding-top: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+  
+.listItem_img {
+    border-radius: 10px;
+}
+
+/* SearchBar css */
+.search_icon{
+    position: absolute;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+.search_input{
+    border-radius: 30px;
+    color: white;
+    background-color: #d9d9d96e;
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 100;
+    border-color: transparent;
+    padding: 18px 18px 18px 35px;
+}
+.search_input::placeholder{
+    color: rgba(194, 194, 194);
+}
+.search_input:focus{
+    outline-width: 0;
 }
